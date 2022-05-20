@@ -1,0 +1,35 @@
+DELIMITER $$
+CREATE FUNCTION SQUARE
+(
+ Num INT
+)
+RETURNS INT 
+DETERMINISTIC
+BEGIN
+    DECLARE SQUARE INT;
+    SET SQUARE = Num * Num ;
+    RETURN SQUARE; 
+END$$
+DELIMITER ;
+
+select SQUARE(5);
+
+SELECT 3+5;
+
+SELECT SQUARE(64);
+
+SELECT RADIANS(180);
+
+SELECT RADIANS(-45);
+
+SELECT CURRENT_TIMESTAMP;
+
+SELECT Abs(243.5) AS AbsNum;
+
+/*---------------------string-----------------*/
+SELECT CONCAT('Bridge', 'Labz');
+
+SELECT CONCAT('SQL', ' ', 'is', ' ', 'fun!');
+
+SELECT UPPER('SQL is FUN!');
+

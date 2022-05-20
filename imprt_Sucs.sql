@@ -1,0 +1,21 @@
+create database ImportNew;
+
+USE ImportNew;
+
+CREATE TABLE ImportData (
+            id INT NOT NULL AUTO_INCREMENT,
+            name VARCHAR(255) NOT NULL,
+            PRIMARY KEY (id)
+	);
+    
+SET GLOBAL local_infile=1;
+LOAD DATA LOCAL INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/file2.csv'
+INTO TABLE ImportData
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS (id,name);
+
+SHOW VARIABLES LIKE "secure_file_priv";
+
+SELECT * FROM importnew.importdata;
